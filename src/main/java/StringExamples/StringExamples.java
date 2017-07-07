@@ -1,7 +1,5 @@
 package StringExamples;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -11,33 +9,33 @@ public class StringExamples {
 	public static String sentence = "No signal for current input";
 
 	public static void main(String[] args) {
-		firstTwo("name");
-		buggyBread();
-		
-		 LocalDate date = LocalDate.now();
-		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
-		  String text = date.format(formatter);
-		  LocalDate parsedDate = LocalDate.parse(text, formatter);
-		  System.out.println(parsedDate);
+		String s = firstTwo("four");
+		System.out.println(s);
+		s = swapLastTwoChar("four");
+		System.out.println(s);
 	}
 	
 	
 	public static String firstTwo(String str) {
-		return str.length()>2?str.substring(0,2):str;
+		return str.length()>0?str.substring(0,2):str;
 	}
 
 
-	//swap two characters
+	//swap last two characters
+	@SuppressWarnings("unused")
 	public static String swapLastTwoChar(String s) {
-		String result = s;
-		if(s != null && s.length() > 1) {
-			char[] ch = s.toCharArray();
-			ch[ch.length-2] = s.charAt(s.length()-1);
-			ch[ch.length-1] = s.charAt(s.length()-2);
-			result = result.valueOf(ch); 
-		}
-		
-		return result;
+		// String starts with 0th element
+		System.out.println("length of this 4 character word as String: " + s.length());
+		System.out.println("first char of String be in the 0th position: " + s.substring(0,1));
+		if (s == null) throw new NullPointerException();
+		if (s.length() <= 1) return s;
+		char[] ch = s.toCharArray();
+		// Arrays starts with 0th element
+		System.out.println("lengh of this 4 character word in an Array: " + ch.length);
+		System.out.println("first char of Array be in the 0th position: " + ch[0]);
+		ch[ch.length-2] = s.charAt(s.length()-1);
+		ch[ch.length-1] = s.charAt(s.length()-2);
+		return String.valueOf(ch);
 	}
 
 	public static String reverseSentence() {
