@@ -2,7 +2,10 @@ package StringExamples;
 
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.ExpectedExceptions;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Map;
+
 import org.testng.annotations.Test;
 
 
@@ -26,11 +29,37 @@ public class StringExamplesTest {
 		assertEquals(StringExamples.reverseSentence("oneword"), "oneword");
 		assertEquals(StringExamples.reverseSentence("two words"), "words two");
 		assertEquals(StringExamples.reverseSentence("three words inputed"), "inputed words three");
-		
 	}
 	
 	@Test(expectedExceptions = NullPointerException.class)
 	public void ExceptionTest() {
 		StringExamples.reverseSentence(null);
+	}
+	
+	@Test
+	public void findDuplicates() {
+		Map<String, Integer> m = null;
+		m = StringExamples.findDuplicateWords("find the duplicates in the String");
+		System.out.println(m);
+		m = StringExamples.findDuplicateWords("there are no duplicates here");
+		System.out.println(m);
+		m = StringExamples.findDuplicateWords("full of duplicates duplicates duplicates full of");
+		System.out.println(m);
+		m = StringExamples.findDuplicateWords("dupicates here and here and there");
+		System.out.println(m);
+	}
+	
+	@Test
+	public void findDuplicateWordsFromFile() {
+		try {
+			StringExamples se = new StringExamples();
+			se.findDuplicateWordsFromFile("DuplicateWordListFile.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
