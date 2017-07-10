@@ -23,4 +23,12 @@ public class NumberExamplesTest {
 		int[] i4 = {7,10};
 		assertEquals(NumberExamples.sum(i, 17),i4);
 	}
+	
+	@Test
+	public static void callMethods() {
+		int[] val = {5,8,6,34,76,34,2,9,46,78,33};
+		NumberExamples.order(val);
+		NumberExamples.multidimension();
+		NumberExamples.methods();
+	}
 }
