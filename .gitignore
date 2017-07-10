@@ -1,5 +1,9 @@
 /target/**
 /test-output/**
+/.metadata/**
+*.classpath
+
+
 
 # ignore all html files
 *.html
