@@ -130,5 +130,15 @@ public class NumberExamples {
 		
 		System.out.println(System.lineSeparator());
 		System.out.println("java.runtime.version: " + System.getProperty("java.runtime.version"));
-	}
+		
+		System.out.println(System.lineSeparator() + "Cloning Arrays");
+		
+		//cloning arrays
+		int ia[][] = { {1,2}, null };
+        int ja[][] = ia.clone();
+        //Arrays referenced by ia and ja are two different variables
+        System.out.print((ia == ja) + " ");
+        //showing that the int[] array that is ia[0] and the int[] array of ja[0] are the same array
+        System.out.println((ia[0] == ja[0] && ia[1] == ja[1]) + " " + ia[0][0] + " " + ja[0][0]);
+    }
 }
