@@ -1,4 +1,4 @@
-package StringExamples;
+package com.spulic.core;
 
 
 
@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-import NumberExamples.NumberExamples;
+import com.spulic.core.NumberExamples;
 
 
 public class NumberExamplesTest {
@@ -30,5 +30,6 @@ public class NumberExamplesTest {
 		NumberExamples.order(val);
 		NumberExamples.multidimension();
 		NumberExamples.methods();
+		NumberExamples.printArray(new int[] {3,5,9,10,3});
 	}
 }

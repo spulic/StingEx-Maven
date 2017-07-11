@@ -1,4 +1,4 @@
-package StringExamples;
+package com.spulic.core;
 
 import java.io.File;
 import java.io.FileNotFoundException;

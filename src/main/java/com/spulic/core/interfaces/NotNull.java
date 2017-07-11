@@ -1,4 +1,4 @@
-package StringExamples.interfaces;
+package com.spulic.core.interfaces;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

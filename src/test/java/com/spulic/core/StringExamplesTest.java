@@ -1,4 +1,4 @@
-package StringExamples;
+package com.spulic.core;
 
 import static org.testng.Assert.assertEquals;
 
@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import org.testng.annotations.Test;
+
+import com.spulic.core.StringExamples;
 
 
 public class StringExamplesTest {

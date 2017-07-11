@@ -1,4 +1,4 @@
-package NumberExamples;
+package com.spulic.core;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -23,6 +23,7 @@ public class NumberExamples {
 		order(val);
 		multidimension();
 		methods();
+		printArray(new int[] {3,5,9,10,3});
 	}
 	
 	/**
@@ -140,5 +141,41 @@ public class NumberExamples {
         System.out.print((ia == ja) + " ");
         //showing that the int[] array that is ia[0] and the int[] array of ja[0] are the same array
         System.out.println((ia[0] == ja[0] && ia[1] == ja[1]) + " " + ia[0][0] + " " + ja[0][0]);
+        
+        System.out.println(System.lineSeparator() + "Arrays.equals check..");
+        int ib[] = {1,2,3};
+        int jb[] = {1,3,2};
+        //Arrays are equals if they have same lengh and have same values correspondingly
+        System.out.println("Equals: " + Arrays.equals(ib, jb));
+        
+        //binary Search
+        System.out.println(System.lineSeparator() + "Arrays Binary Search...");
+        //Sort the array first
+        int ic[] = {1,4,7,6,10,39,45,24,2,9};
+        Arrays.sort(ic);
+        int i = Arrays.binarySearch(ic, 24);
+        System.out.println("Binary Search result: " + i);
+        
+        //Can I sort an array which is marked as final
+        //Secondly lets try to modify the array marked as final
+        final int[] id = {1,3,4,2};
+        Arrays.sort(id);
+        System.out.println(System.lineSeparator() + "final sorted array: ");
+        printArray(id);
+        Arrays.fill(id,3,4,5);
+        System.out.println(System.lineSeparator() + "after filling the array with an additional value: ");
+        printArray(id);
+        System.out.println(System.lineSeparator());
+		
+        
     }
+	
+	public static void printArray(int[] arr) {
+		System.out.println(Arrays.toString(arr));
+		StringBuffer sb = new StringBuffer(128);
+		for(int i : arr) {
+			sb.append(i).append(" ");
+		}
+		System.out.println(sb.toString());
+	}
 }
