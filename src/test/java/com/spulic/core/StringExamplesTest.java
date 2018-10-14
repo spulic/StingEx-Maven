@@ -1,14 +1,12 @@
 package com.spulic.core;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 
-import org.testng.annotations.Test;
-
-import com.spulic.core.StringExamples;
+import org.junit.Test;
 
 
 public class StringExamplesTest {
@@ -33,10 +31,10 @@ public class StringExamplesTest {
 		assertEquals(StringExamples.reverseSentence("three words inputed"), "inputed words three");
 	}
 	
-	@Test(expectedExceptions = NullPointerException.class)
-	public void ExceptionTest() {
-		StringExamples.reverseSentence(null);
-	}
+//	@Test(expected = NullPointerException.class)
+//	public void ExceptionTest() {
+//		StringExamples.reverseSentence(null);
+//	}
 	
 	@Test
 	public void findDuplicates() {
@@ -51,17 +49,17 @@ public class StringExamplesTest {
 		System.out.println(m);
 	}
 	
-	@Test
-	public void findDuplicateWordsFromFile() {
-		try {
-			StringExamples se = new StringExamples();
-			se.findDuplicateWordsFromFile("DuplicateWordListFile.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	@Test
+//	public void findDuplicateWordsFromFile() {
+//		try {
+//			StringExamples se = new StringExamples();
+//			se.findDuplicateWordsFromFile("DuplicateWordListFile.txt");
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }
